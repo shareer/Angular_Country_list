@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row; /* Align cards in a row */
     gap: 16px; /* Optional: space between cards */
-    flex-wrap: wrap; /* Wrap cards to the next line if the container is not wide enough */
+    flex-wrap: wrap; 
     justify-content: center;
   }
   

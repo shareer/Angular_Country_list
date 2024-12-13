@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { ChildComponent } from '../child/child.component';
 import { CountryService } from '../../services/country.service';
 import { HttpInterceptorService } from '../../interceptors/http-error.interceptor';
-import { CardComponent } from '../card/card.component';
+import { SelectedCountry } from '../selected-country/selected-country.component';
 
 @Component({
   selector: 'app-parent',
@@ -19,7 +19,7 @@ import { CardComponent } from '../card/card.component';
     MatCardModule,
     ChildComponent,
     HttpClientModule,
-    CardComponent
+    SelectedCountry
   ],
   providers: [
     {

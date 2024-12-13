@@ -3,11 +3,11 @@ import { MatCardModule } from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 
 @Component({
-  selector: 'card',
+  selector: 'selected-country',
   imports: [MatCardModule, MatListModule],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  templateUrl: './selected-country.component.html',
+  styleUrl: './selected-country.component.scss'
 })
-export class CardComponent {
+export class SelectedCountry {
   @Input() country: any;
 }
