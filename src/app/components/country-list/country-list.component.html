@@ -1,10 +1,8 @@
 <div class="container">
-  <h1>Country List</h1>
-
-  <selected-country *ngIf="clickedItem" [country]="clickedItem"></selected-country>
-
-  <h4>Click Counter: {{ counter }}</h4>
-
+  <h1>Click a country to view the details</h1>
+  <div class="selected-country-container" *ngIf="clickedItem">
+    <selected-country  [country]="clickedItem" [counter]="counter"></selected-country>
+  </div>
   <div class="card-container">
     <div *ngFor="let country of countries" (click)="onItemClick(country)">
       <country-item [country]="country" (itemClicked)="onItemClick($event)"></country-item>

@@ -1,14 +1,15 @@
-.flag-image {
-    width: 100px;
-    height: 60px;
-    margin-left: 20px;
+.fixed-width-table {
+  table-layout: fixed;
+  width: 100%; 
+
+  th, td {
+    padding: 16px;
+    text-align: left;
+    font-size: 16px;
   }
-  
-  .card-container {
-    display: flex;
-    flex-direction: row; /* Align cards in a row */
-    gap: 16px; /* Optional: space between cards */
-    flex-wrap: wrap; 
-    justify-content: center;
+
+  mat-header-cell,
+  mat-cell {
+    width: 200px;
   }
-  
+}

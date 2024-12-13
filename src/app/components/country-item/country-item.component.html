@@ -1,6 +1,8 @@
 <mat-card appearance="outlined" (click)="onCountryClick()" class="country-card">
-    <mat-card-content>
-      <div class="country-flag" > {{country.flag}} </div>
-      <div class="country-name">{{ country.name.common }}</div>
-    </mat-card-content>
-  </mat-card>
+  <mat-card-content class="card-bg" 
+    [style.backgroundImage]="'url(' + country?.flags?.svg + ')'">
+  </mat-card-content>
+  <mat-card-content class="card-content">
+    <div class="country-name">{{ country.name.common }}</div>
+  </mat-card-content>
+</mat-card>
