@@ -1,0 +1,10 @@
+<mat-card class="example-card" appearance="outlined">
+  <h4>Last Clicked Country</h4>
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Name : {{ country?.name?.common }}</mat-card-title>
+      <mat-card-subtitle>Official Name: {{ country?.name?.official }}</mat-card-subtitle>
+      <img mat-card-image [src]="country?.flags?.svg" alt="Country Flag" class="flag-image">
+    </mat-card-title-group>
+  </mat-card-header>
+</mat-card>

@@ -1,0 +1,14 @@
+.flag-image {
+    width: 100px;
+    height: 60px;
+    margin-left: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: row; /* Align cards in a row */
+    gap: 16px; /* Optional: space between cards */
+    flex-wrap: wrap; /* Wrap cards to the next line if the container is not wide enough */
+    justify-content: center;
+  }
+  
