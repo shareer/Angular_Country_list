@@ -5,13 +5,13 @@ import {MatListModule} from '@angular/material/list';
 
 
 @Component({
-  selector: 'app-child',
+  selector: 'country-item',
   standalone: true,
-  templateUrl: './child.component.html',
-  styleUrls: ['./child.component.scss'],
+  templateUrl: './country-item.component.html',
+  styleUrls: ['./country-item.component.scss'],
   imports: [MatCardModule, MatButtonModule, MatListModule]
 })
-export class ChildComponent {
+export class CountryItem {
   @Input() country: any;
   @Output() itemClick = new EventEmitter<any>();
 

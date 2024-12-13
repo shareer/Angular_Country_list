@@ -7,7 +7,7 @@
 
   <div class="card-container">
     <div *ngFor="let country of countries" (click)="onItemClick(country)">
-      <app-child [country]="country" (itemClicked)="onItemClick($event)"></app-child>
+      <country-item [country]="country" (itemClicked)="onItemClick($event)"></country-item>
     </div>
   </div>
 </div>

@@ -4,20 +4,20 @@ import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { ChildComponent } from '../child/child.component';
 import { CountryService } from '../../services/country.service';
 import { HttpInterceptorService } from '../../interceptors/http-error.interceptor';
 import { SelectedCountry } from '../selected-country/selected-country.component';
+import { CountryItem } from '../country-item/country-item.component';
 
 @Component({
-  selector: 'app-parent',
+  selector: 'country-list',
   standalone: true,
   imports: [
     CommonModule,
     MatListModule,
     MatSlideToggleModule,
     MatCardModule,
-    ChildComponent,
+    CountryItem,
     HttpClientModule,
     SelectedCountry
   ],
@@ -28,10 +28,10 @@ import { SelectedCountry } from '../selected-country/selected-country.component'
       multi: true,
     },
   ],
-  templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.scss'],
+  templateUrl: './country-list.component.html',
+  styleUrls: ['./country-list.component.scss'],
 })
-export class ParentComponent {
+export class CountryList {
   countries: any[] = [];
   clickedItem: any = null;
   counter: number = 0;
