@@ -1,9 +1,9 @@
 <div class="container">
     <h1>Country List</h1>
   
-    <!-- <card *ngIf="clickedItem" [country]="clickedItem"></card> -->
+    <card *ngIf="clickedItem" [country]="clickedItem"></card>
 
-    <mat-card class="example-card" appearance="outlined" *ngIf="clickedItem">
+    <!-- <mat-card class="example-card" appearance="outlined" *ngIf="clickedItem">
         <h4>Last Clicked Country</h4>
         <mat-card-header>
           <mat-card-title-group>
@@ -12,7 +12,7 @@
             <img mat-card-image [src]="clickedItem?.flags?.svg" alt="Country Flag" class="flag-image">
           </mat-card-title-group>
         </mat-card-header>
-      </mat-card>
+      </mat-card> -->
     
     <h4>Click Counter: {{ counter }}</h4>
   

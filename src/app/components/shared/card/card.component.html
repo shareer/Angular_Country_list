@@ -1,10 +1,21 @@
-<mat-card class="example-card" appearance="outlined">
-  <h4>Last Clicked Country</h4>
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Name : {{ country?.name?.common }}</mat-card-title>
-      <mat-card-subtitle>Official Name: {{ country?.name?.official }}</mat-card-subtitle>
-      <img mat-card-image [src]="country?.flags?.svg" alt="Country Flag" class="flag-image">
-    </mat-card-title-group>
+<mat-card class="banner" appearance="outlined">
+  <mat-card-header class="banner-header">
+      <mat-card-title>
+          <h4 class="banner-title">Last Clicked Country is {{country?.name?.common}}</h4>
+      </mat-card-title>
   </mat-card-header>
+
+  <mat-card-content class="banner-content">
+      <mat-list>
+          <mat-list-item>Official Name: {{ country?.name?.official }}</mat-list-item>
+          <mat-list-item>Population : {{ country?.population }}</mat-list-item>
+          <mat-list-item>Continents : {{country?.continents}}</mat-list-item>
+          <mat-list-item>Capital : {{country?.capital}}</mat-list-item>
+          <mat-list-item>Region : {{country?.region}}</mat-list-item>
+          <mat-list-item>Area : {{country?.area}}</mat-list-item>
+          <mat-list-item> <img mat-card-image [src]="country?.flags?.svg" alt="Country Flag"
+                  class="flag-image"></mat-list-item>
+      </mat-list>
+
+  </mat-card-content>
 </mat-card>
