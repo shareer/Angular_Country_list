@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { ChildComponent } from '../child/child.component';
 import { CountryService } from '../../services/country.service';
 import { HttpInterceptorService } from '../../interceptors/http-error.interceptor';
-import { CardComponent } from '../shared/card/card.component';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-parent',
