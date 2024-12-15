@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CountryService } from '../../services/country.service';
 import { SelectedCountry } from '../selected-country/selected-country.component';
 import { CountryItem } from '../country-item/country-item.component';
+import { Country } from '../../models/country.model';
 
 @Component({
   selector: 'country-list',
@@ -22,8 +23,8 @@ import { CountryItem } from '../country-item/country-item.component';
   styleUrls: ['./country-list.component.scss'],
 })
 export class CountryList {
-  countries: any[] = [];
-  clickedItem: any = null;
+  countries: Country[] = [];
+  clickedItem = null;
   counter: number = 0;
 
   constructor(private countryService: CountryService) {}

@@ -15,7 +15,11 @@ export class CountryItem {
   @Input() country: any;
   @Output() itemClick = new EventEmitter<any>();
 
+
+  
+
   onCountryClick(): void {
+    console.log("country", this.country);
     this.itemClick.emit(this.country); 
   }
 }
