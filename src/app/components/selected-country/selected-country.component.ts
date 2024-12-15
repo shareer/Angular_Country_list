@@ -3,7 +3,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
-import { Country, CountryData } from '../../models/country.model';
+import { CountryTableData, TransformedCountry } from '../../models/country.model';
 
 @Component({
   selector: 'selected-country',
@@ -13,16 +13,16 @@ import { Country, CountryData } from '../../models/country.model';
 })
 
 export class SelectedCountry implements OnChanges {
-  @Input() country: Country | null = null;  
+  @Input() country: TransformedCountry | null = null;  
   @Input() counter: number = 0;
   displayedColumns: string[] = ['field', 'value'];
-  countryData: CountryData[] = [];
+  countryData: CountryTableData[] = [];
   dataSource = new MatTableDataSource(this.countryData);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['country'] && this.country) {
       this.countryData = [
-        { field: 'Official Name', value: this.country.name.official },
+        { field: 'Official Name', value: this.country.officialName },
         { field: 'Population', value: this.country.population },
         { field: 'Continents', value: this.country.continents.join(', ') },
         { field: 'Capital', value: this.country.capital },

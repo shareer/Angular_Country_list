@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CountryService } from '../../services/country.service';
 import { SelectedCountry } from '../selected-country/selected-country.component';
 import { CountryItem } from '../country-item/country-item.component';
-import { Country } from '../../models/country.model';
+import { CountryFromApi, TransformedCountry } from '../../models/country.model';
 
 @Component({
   selector: 'country-list',
@@ -23,7 +23,7 @@ import { Country } from '../../models/country.model';
   styleUrls: ['./country-list.component.scss'],
 })
 export class CountryList {
-  countries: Country[] = [];
+  countries: TransformedCountry[] = [];
   clickedItem = null;
   counter: number = 0;
 
@@ -31,8 +31,18 @@ export class CountryList {
 
   ngOnInit() {
     this.countryService.getCountries().subscribe({
-      next: (data: any) => {
-        this.countries = data || [];
+      next: (data: CountryFromApi[]) => {
+        this.countries = data.map(country => ({
+          name: country.name.common,
+          officialName: country.name.official,
+          population: country.population,
+          continents: country.continents,
+          capital: country.capital,
+          region: country.region,
+          area: country.area,
+          flagIcon: country.flag,
+          flagImage: country?.flags?.svg,
+        }));
       },
       error: (err) => {
         console.error('Error fetching countries:', err);

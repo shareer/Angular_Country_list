@@ -8,7 +8,6 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { CountryService } from '../../services/country.service';
 import { SelectedCountry } from '../selected-country/selected-country.component';
 import { CountryItem } from '../country-item/country-item.component';
-import { Country } from '../../models/country.model';
 
 describe('CountryList', () => {
   let component: CountryList;

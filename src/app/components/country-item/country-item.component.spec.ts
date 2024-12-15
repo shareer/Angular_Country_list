@@ -16,7 +16,6 @@ describe('CountryItem', () => {
     fixture = TestBed.createComponent(CountryItem);
     component = fixture.componentInstance;
 
-    component.country = { name: 'India' };
     fixture.detectChanges(); 
   });
 

@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MatListModule} from '@angular/material/list';
-
+import { MatListModule } from '@angular/material/list';
+import { TransformedCountry } from '../../models/country.model';
 
 @Component({
   selector: 'country-item',
@@ -12,14 +12,10 @@ import {MatListModule} from '@angular/material/list';
   imports: [MatCardModule, MatButtonModule, MatListModule]
 })
 export class CountryItem {
-  @Input() country: any;
+  @Input() country!: TransformedCountry;
   @Output() itemClick = new EventEmitter<any>();
 
-
-  
-
   onCountryClick(): void {
-    console.log("country", this.country);
     this.itemClick.emit(this.country); 
   }
 }
