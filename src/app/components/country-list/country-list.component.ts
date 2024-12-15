@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
 import { CountryService } from '../../services/country.service';
-import { HttpInterceptorService } from '../../interceptors/http-error.interceptor';
 import { SelectedCountry } from '../selected-country/selected-country.component';
 import { CountryItem } from '../country-item/country-item.component';
 
@@ -18,15 +16,7 @@ import { CountryItem } from '../country-item/country-item.component';
     MatSlideToggleModule,
     MatCardModule,
     CountryItem,
-    HttpClientModule,
-    SelectedCountry
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpInterceptorService,
-      multi: true,
-    },
+    SelectedCountry,
   ],
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.scss'],
@@ -39,8 +29,13 @@ export class CountryList {
   constructor(private countryService: CountryService) {}
 
   ngOnInit() {
-    this.countryService.getCountries().subscribe((data: any) => {
-      this.countries = data || [];
+    this.countryService.getCountries().subscribe({
+      next: (data: any) => {
+        this.countries = data || [];
+      },
+      error: (err) => {
+        console.error('Error fetching countries:', err);
+      },
     });
   }
 
